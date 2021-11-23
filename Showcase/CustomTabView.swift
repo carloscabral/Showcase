@@ -21,8 +21,8 @@ struct CustomTabView: View {
             
             TabBarButton(animation: animation, image: "video", selectedTab: $selectedTab)
         }
-        .padding(.top)
-        .frame(height: 80)
+        .frame(height: 60)
+        .padding(.vertical)
     }
 }
 

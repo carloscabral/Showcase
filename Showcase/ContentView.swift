@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var selectedTab: String = "rectangle.stack"
+    @State var filteredItems: [Video] = Videos.videoList
     
     var body: some View {
         
@@ -20,11 +21,12 @@ struct ContentView: View {
                 
                 TeamView().tag("person.2")
                 
-                VideosView().tag("video")
+                VideosView(filteredItems: $filteredItems).tag("video")
             }
-            
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             CustomTabView(selectedTab: $selectedTab)
         }
+        .ignoresSafeArea()
     }
 }
 

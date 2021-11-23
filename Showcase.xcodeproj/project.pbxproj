@@ -15,6 +15,7 @@
 		21F3CB0B274D1066003A63C1 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CB0A274D1066003A63C1 /* TeamView.swift */; };
 		21F3CB0D274D107B003A63C1 /* VideosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CB0C274D107B003A63C1 /* VideosView.swift */; };
 		21F3CB0F274D1549003A63C1 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CB0E274D1549003A63C1 /* CustomTabView.swift */; };
+		21F3CB11274D223F003A63C1 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CB10274D223F003A63C1 /* Videos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		21F3CB0A274D1066003A63C1 /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 		21F3CB0C274D107B003A63C1 /* VideosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosView.swift; sourceTree = "<group>"; };
 		21F3CB0E274D1549003A63C1 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		21F3CB10274D223F003A63C1 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				21F3CB0A274D1066003A63C1 /* TeamView.swift */,
 				21F3CB0C274D107B003A63C1 /* VideosView.swift */,
 				21F3CB0E274D1549003A63C1 /* CustomTabView.swift */,
+				21F3CB10274D223F003A63C1 /* Videos.swift */,
 			);
 			path = Showcase;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				21F3CB09274D1047003A63C1 /* ProjectsView.swift in Sources */,
 				21F3CB0D274D107B003A63C1 /* VideosView.swift in Sources */,
 				21F3CAFD274D0AA2003A63C1 /* ContentView.swift in Sources */,
+				21F3CB11274D223F003A63C1 /* Videos.swift in Sources */,
 				21F3CB0F274D1549003A63C1 /* CustomTabView.swift in Sources */,
 				21F3CAFB274D0AA2003A63C1 /* ShowcaseApp.swift in Sources */,
 				21F3CB0B274D1066003A63C1 /* TeamView.swift in Sources */,
