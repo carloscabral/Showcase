@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selectedTab: String = "rectangle.stack"
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        VStack(spacing: 0) {
+            
+            TabView(selection: $selectedTab) {
+                ProjectsView().tag("rectangle.stack")
+                
+                TeamView().tag("person.2")
+                
+                VideosView().tag("video")
+            }
+            
+            CustomTabView(selectedTab: $selectedTab)
+        }
     }
 }
 
