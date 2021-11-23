@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     @State var selectedTab: String = "rectangle.stack"
     @State var filteredItems: [Video] = Videos.videoList
     
@@ -17,13 +21,13 @@ struct ContentView: View {
         VStack(spacing: 0) {
             
             TabView(selection: $selectedTab) {
+                
                 ProjectsView().tag("rectangle.stack")
                 
                 TeamView().tag("person.2")
                 
                 VideosView(filteredItems: $filteredItems).tag("video")
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             CustomTabView(selectedTab: $selectedTab)
         }
         .ignoresSafeArea()

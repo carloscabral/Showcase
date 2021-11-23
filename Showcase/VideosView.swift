@@ -9,24 +9,26 @@ import SwiftUI
 
 struct VideosView: View {
     
+    @State var searchingFor = ""
     @Binding var filteredItems : [Video]
     
     var body: some View {
         
-        VStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                VStack(alignment: .leading){
-                    
-                    ForEach(filteredItems) {item in
-                        
-                        VideoCardView(item: item)
-                        
-                    }
-                }
-            }
+        NavigationView {
+            List {
+                ForEach(results) {item in
+                    VideoCardView(item: item)
+                }.listRowSeparator(.hidden)
+            }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            .searchable(text: $searchingFor)
+            .navigationTitle("Videos")
         }
-        .padding(.horizontal)
+    }
+    
+    var results: [Video] {
+            return searchingFor.isEmpty ? filteredItems : filteredItems
+                .filter {$0.name.lowercased().contains(searchingFor.lowercased())
+        }
     }
 }
 
@@ -59,7 +61,8 @@ struct VideoCardView: View {
                 }
                 .padding(.leading, 12)
             }
-            .padding(.top, 16)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 0)
             
         }).foregroundColor(.primary)
     }
@@ -71,5 +74,3 @@ struct VideoCardView: View {
 //        VideosView()
 //    }
 //}
-
-
