@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1536px" height="1536px" viewBox="0 0 1536 1536" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon_no-text</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#6273C3" offset="0%"></stop>
+            <stop stop-color="#677ACE" offset="47.7354307%"></stop>
+            <stop stop-color="#5565AD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Icon_no-text" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="1536" height="1536"></rect>
+        <g id="Shape-2" transform="translate(167.000000, 167.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M1026.22814,176.091858 C791.438999,-58.6972859 410.812256,-58.6972859 176.045473,176.091858 C-26.3204075,378.435378 -54.1596917,689.117317 92.2145686,921.402043 L46.5760313,1155.74397 L280.895597,1110.10543 C513.180323,1256.54677 823.884622,1228.61805 1026.22814,1026.27453 C1261.01729,791.574827 1261.01729,410.85864 1026.22814,176.091858 Z M985.218305,985.26469 L822.923105,953.646418 C662.036639,1055.07533 446.85798,1035.73318 306.722402,895.508154 C144.11415,732.899902 144.11415,469.265235 306.722402,306.679343 C384.805251,228.594457 490.709544,184.726654 601.136808,184.726654 C711.564072,184.726654 817.468364,228.594457 895.551213,306.679343 C1035.68679,446.814921 1055.02894,661.99358 953.689477,822.880046 L985.218305,985.26469 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

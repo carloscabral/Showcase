@@ -18,8 +18,9 @@ struct VideosView: View {
             List {
                 ForEach(results) {item in
                     VideoCardView(item: item)
-                }.listRowSeparator(.hidden)
-            }.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                }
+                .listRowSeparator(.hidden)
+            }
             .searchable(text: $searchingFor)
             .navigationTitle("Videos")
         }
