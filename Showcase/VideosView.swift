@@ -12,6 +12,8 @@ struct VideosView: View {
     @State var searchingFor = ""
     @Binding var filteredItems : [Video]
     
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     var body: some View {
         
         NavigationView {
@@ -23,7 +25,18 @@ struct VideosView: View {
             }
             .searchable(text: $searchingFor)
             .navigationTitle("Videos")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars")).font(.title3).offset(x: 8)
+                        .onTapGesture() {
+                            withAnimation(.default) {
+                                isDarkMode.toggle()
+                            }
+                        }
+                }
+            }
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
     }
     
     var results: [Video] {

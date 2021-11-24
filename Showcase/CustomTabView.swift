@@ -44,7 +44,7 @@ struct TabBarButton: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 28, height: 28)
-                    .foregroundColor(selectedTab == image ? Color(.black) : Color(.black).opacity(0.5))
+                    .foregroundColor(selectedTab == image ? Color.primary : Color.primary.opacity(0.5))
                 
                 if selectedTab == image {
                     Circle()

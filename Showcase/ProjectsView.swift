@@ -12,6 +12,8 @@ struct ProjectsView: View {
     var startups: [Project] = Projects.startupProjects
     var corporates: [Project] = Projects.corporateProjects
     
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     var body: some View {
     
         NavigationView {
@@ -29,7 +31,19 @@ struct ProjectsView: View {
             }
             .padding(.top, 12)
             .navigationTitle("Projetos")
-        }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars")).font(.title3)
+                        .onTapGesture() {
+                            withAnimation(.default) {
+                                isDarkMode.toggle()
+                            }
+                        }
+                }
+            }
+        }.preferredColorScheme(
+            isDarkMode ? .dark : .light
+        )
     }
 }
 
