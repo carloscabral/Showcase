@@ -85,16 +85,17 @@ struct CardView: View {
                         .resizable()
                         .frame(width: 36, height: 36)
                         .cornerRadius(8)
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 3) {
                         Text(project.title).font(.body).bold()
-                        Text(project.description).font(.caption).opacity(0.5).lineLimit(1)
+                        Text(project.description).font(.caption).lineLimit(1)
                     }
                     .foregroundColor(.white)
                     Spacer()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(12)
-//                .background(VisualEffectBlurView(blurStyle: .systemThinMaterialDark))
+                .background(.ultraThinMaterial)
+                .background(.black.opacity(0.4))
             }
             .frame(width: 225)
             .frame(height: 188)

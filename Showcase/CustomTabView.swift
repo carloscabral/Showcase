@@ -23,6 +23,7 @@ struct CustomTabView: View {
         }
         .frame(height: 60)
         .padding(.vertical)
+        .background(.ultraThinMaterial)
     }
 }
 
