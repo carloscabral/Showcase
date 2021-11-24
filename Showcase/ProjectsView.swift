@@ -19,14 +19,16 @@ struct ProjectsView: View {
         NavigationView {
             VStack(alignment: .leading){
                 
-                CardScrollList(
-                    selectedCategory: startups,
-                    titleText: "Para Startups")
-                
-                CardScrollList(
-                    selectedCategory: corporates,
-                    titleText: "Para Corporações",
-                    haveSpace: true)
+                ScrollView(.vertical, showsIndicators: false) {
+                    CardScrollList(
+                        selectedCategory: startups,
+                        titleText: "Para Startups")
+                    
+                    CardScrollList(
+                        selectedCategory: corporates,
+                        titleText: "Para Corporações",
+                        haveSpace: true)
+                }
                 
             }
             .padding(.top, 12)
@@ -58,6 +60,7 @@ struct CardScrollList: View {
         
         Text(titleText)
             .font(.title2).fontWeight(.medium).opacity(0.6)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 24)
             .padding(.top, 0)
         
@@ -125,6 +128,7 @@ struct CardView: View {
 // PREVIEW
 struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsView()
+        ContentView()
+            .previewDevice("iPhone 8")
     }
 }
