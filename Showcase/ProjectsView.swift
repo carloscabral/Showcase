@@ -17,9 +17,13 @@ struct ProjectsView: View {
     var body: some View {
     
         NavigationView {
+            
             VStack(alignment: .leading){
                 
                 ScrollView(.vertical, showsIndicators: false) {
+                    
+                    Spacer()
+                    
                     CardScrollList(
                         selectedCategory: startups,
                         titleText: "Para Startups")
@@ -34,8 +38,13 @@ struct ProjectsView: View {
             .padding(.top, 12)
             .navigationTitle("Projetos")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("abacomm-logo-svg")
+                        .resizable()
+                        .frame(width: 22, height: 22)
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars")).font(.title3)
+                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars"))
                         .onTapGesture() {
                             withAnimation(.default) {
                                 isDarkMode.toggle()
@@ -43,7 +52,9 @@ struct ProjectsView: View {
                         }
                 }
             }
-        }.preferredColorScheme(
+            
+        }
+        .preferredColorScheme(
             isDarkMode ? .dark : .light
         )
     }
@@ -70,7 +81,6 @@ struct CardScrollList: View {
                     NavigationLink(destination: ProjectsDetailView(project: project)) {
                         CardView(project: project)
                     }
-                    .foregroundColor(.primary)
                 }
             }
             .padding(.bottom, 54)
@@ -129,6 +139,6 @@ struct CardView: View {
 struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewDevice("iPhone 8")
+            .previewDevice("iPhone 11")
     }
 }

@@ -17,11 +17,11 @@ struct CustomTabView: View {
             
             TabBarButton(animation: animation, image: "rectangle.stack", selectedTab: $selectedTab)
             
-            TabBarButton(animation: animation, image: "person.2", selectedTab: $selectedTab)
-            
             TabBarButton(animation: animation, image: "video", selectedTab: $selectedTab)
+            
+            TabBarButton(animation: animation, image: "person.2", selectedTab: $selectedTab)
         }
-        .frame(height: 60)
+        .frame(height: 50)
         .padding(.vertical)
         .background(.ultraThinMaterial)
     }
@@ -54,7 +54,8 @@ struct TabBarButton: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .offset(y: -12)
+            
+            .offset(y: -10)
         })
     }
 }

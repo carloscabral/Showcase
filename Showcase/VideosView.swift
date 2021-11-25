@@ -23,11 +23,17 @@ struct VideosView: View {
                 }
                 .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
             .searchable(text: $searchingFor)
             .navigationTitle("Videos")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("abacomm-logo-svg")
+                        .resizable()
+                        .frame(width: 22, height: 22)
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars")).font(.title3).offset(x: 8)
+                    Image(systemName: (!isDarkMode ? "sun.max" : "moon.stars"))
                         .onTapGesture() {
                             withAnimation(.default) {
                                 isDarkMode.toggle()
@@ -83,8 +89,8 @@ struct VideoCardView: View {
 }
 
 // PREVIEW
-//struct VideosView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VideosView()
-//    }
-//}
+struct VideosView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

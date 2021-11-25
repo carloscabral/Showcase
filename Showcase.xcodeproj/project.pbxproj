@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212548DB274F03E8008328A5 /* StaggeredGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212548DA274F03E8008328A5 /* StaggeredGrid.swift */; };
+		212548DD274F04A3008328A5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212548DC274F04A3008328A5 /* Team.swift */; };
 		21F3CAFB274D0AA2003A63C1 /* ShowcaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CAFA274D0AA2003A63C1 /* ShowcaseApp.swift */; };
 		21F3CAFD274D0AA2003A63C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F3CAFC274D0AA2003A63C1 /* ContentView.swift */; };
 		21F3CAFF274D0AA4003A63C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21F3CAFE274D0AA4003A63C1 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212548DA274F03E8008328A5 /* StaggeredGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredGrid.swift; sourceTree = "<group>"; };
+		212548DC274F04A3008328A5 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		21CCE1AD274DFB0C008AB1EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		21F3CAF7274D0AA2003A63C1 /* Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F3CAFA274D0AA2003A63C1 /* ShowcaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseApp.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				21F3CB0E274D1549003A63C1 /* CustomTabView.swift */,
 				21F3CB13274D6E8D003A63C1 /* Model */,
 				21F3CB16274D7196003A63C1 /* ProjectsDetailView.swift */,
+				212548DA274F03E8008328A5 /* StaggeredGrid.swift */,
 			);
 			path = Showcase;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			children = (
 				21F3CB10274D223F003A63C1 /* Videos.swift */,
 				21F3CB14274D6EE4003A63C1 /* Projects.swift */,
+				212548DC274F04A3008328A5 /* Team.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,7 +180,9 @@
 				21F3CB15274D6EE4003A63C1 /* Projects.swift in Sources */,
 				21F3CB11274D223F003A63C1 /* Videos.swift in Sources */,
 				21F3CB17274D7196003A63C1 /* ProjectsDetailView.swift in Sources */,
+				212548DB274F03E8008328A5 /* StaggeredGrid.swift in Sources */,
 				21F3CB0F274D1549003A63C1 /* CustomTabView.swift in Sources */,
+				212548DD274F04A3008328A5 /* Team.swift in Sources */,
 				21F3CAFB274D0AA2003A63C1 /* ShowcaseApp.swift in Sources */,
 				21F3CB0B274D1066003A63C1 /* TeamView.swift in Sources */,
 			);

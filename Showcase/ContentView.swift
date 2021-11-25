@@ -26,16 +26,16 @@ struct HomeView: View {
     @State var filteredItems: [Video] = Videos.videoList
     
     var body: some View {
-        
+            
         VStack(spacing: 0) {
             
             TabView(selection: $selectedTab) {
                 
                 ProjectsView().tag("rectangle.stack")
                 
-                TeamView().tag("person.2")
-                
                 VideosView(filteredItems: $filteredItems).tag("video")
+                
+                TeamView().tag("person.2")
             }
             CustomTabView(selectedTab: $selectedTab)
         }
@@ -108,7 +108,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-                .previewDevice("iPhone 8")
+                .previewDevice("iPhone 11")
         }
     }
 }
