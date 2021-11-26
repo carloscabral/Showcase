@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct VideosView: View {
     
@@ -20,6 +21,14 @@ struct VideosView: View {
             List {
                 ForEach(results) {item in
                     VideoCardView(item: item)
+                        .swipeActions {
+                            Button {
+                                UIPasteboard.general.setValue(item.source,
+                                        forPasteboardType: UTType.utf8PlainText.identifier as String)
+                            } label: {
+                               Label("Copiar", systemImage: "doc.on.doc.fill")
+                            }.tint(.pink)
+                        }
                 }
                 .listRowSeparator(.hidden)
             }
