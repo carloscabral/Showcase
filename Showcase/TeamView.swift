@@ -127,24 +127,29 @@ struct ModalView: View {
                 .padding(.bottom, 24)
             
             
-            HStack(spacing: 54){
+            HStack(alignment: .top, spacing: 54){
                 VStack(alignment: .leading) {
-                    Text("Cargo".uppercased()).font(.caption).bold().foregroundColor(.secondary)
-                        .frame(height: 8)
-                    Text(team.jobTitle)
-                        .padding(.bottom, 16)
+                    TextBlockView(label: "Cargo", content: team.jobTitle)
                 }
             
                 VStack(alignment: .leading) {
-                    Text("Setor".uppercased()).font(.caption).bold().foregroundColor(.secondary)
-                        .frame(height: 8)
-                    Text(team.jobCategory).padding(.bottom, 16)
+                    TextBlockView(label: "Setor", content: team.jobCategory)
                 }
             }
             
             VStack(alignment: .leading) {
-                Text("Descrição".uppercased()).font(.caption).bold().foregroundColor(.secondary).frame(height: 8)
-                Text(team.description).padding(.bottom, 16)
+                
+                TextBlockView(label: "Descrição", content: team.description)
+                
+                HStack(spacing: 16) {
+                    ForEach(team.socialNetworks) { social in
+                        Link(destination: URL(string: social.URL)!) {
+                            Image(systemName: "link.circle.fill")
+                                .font(.largeTitle)
+                        }
+                    }
+                }
+                
             }.padding(.top, 16)
             
             Spacer()
@@ -165,9 +170,22 @@ struct ModalView: View {
 }
 
 
+struct TextBlockView: View {
+    
+    var label: String
+    var content: String
+    
+    var body: some View {
+        Text("\(label)".uppercased()).font(.caption).bold().foregroundColor(.secondary)
+            .frame(height: 8)
+        Text("\(content)").padding(.bottom, 16)
+    }
+}
+
+
 // PREVIEW
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamView().previewDevice("iPhone 8")
+        TeamView().previewDevice("iPhone 11")
     }
 }

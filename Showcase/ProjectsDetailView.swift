@@ -73,14 +73,30 @@ struct ProjectsDetailView: View {
                     .zIndex(1)
                     
                     VStack(alignment: .leading, spacing: 15) {
-                        Text("Sobre o projeto").font(.title).bold()
+                        Text("Sobre o projeto").font(.title2).bold()
                             .padding(.top, 12)
-                        Text(project.description)
-                            .font(.title3).fontWeight(.regular).lineSpacing(6)
-                            .lineSpacing(3)
+                        
+                        Text("\(getFirstParagraph(val: project.description)).")
+                            .font(.title3).fontWeight(.regular)
+                            .lineSpacing(6)
+                            .foregroundColor(.primary.opacity(0.7))
+                        
+                        Image(project.secondImage)
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(4)
+                            .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: 20)
+                            .padding(.vertical)
+                        
+                        Text(getRemainingParagraph(val: project.description))
+                            .font(.title3).fontWeight(.regular)
+                            .lineSpacing(6)
                             .foregroundColor(.primary.opacity(0.7))
                             
-                    }.padding(.horizontal)
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom, 70)
+                    
                 }
                 .modifier(OffsetModifier(offset: $offset))
                 
@@ -115,6 +131,21 @@ struct ProjectsDetailView: View {
         return offset < 0 ? radius : 50
     }
     
+    private func getFirstParagraph(val: String) -> String {
+        var firstText = val.components(separatedBy: ". ")
+        return firstText.removeFirst()
+    }
+    
+    private func getRemainingParagraph(val: String) -> String {
+
+        if let range = val.range(of: ". ") {
+            let remaingText = val[range.upperBound...]
+            print(remaingText)
+            return String(remaingText)
+        }
+        return ""
+    }
+    
 }
 
 
@@ -122,6 +153,8 @@ struct TopBarView: View {
     
     var project: Project
     var maxHeight: CGFloat
+    let colors: [String: Color] = ["web": .purple, "mobile": .blue]
+    
     @Binding var offset: CGFloat
     
     var body: some View {
@@ -139,9 +172,23 @@ struct TopBarView: View {
                     .cornerRadius(10)
                 
                 Text(project.title.uppercased()).font(.largeTitle).bold()
-                Text(project.description)
-                    .fontWeight(.regular)
-                    .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                
+                HStack(alignment: .bottom) {
+                    VStack {
+                        Text("Projeto".uppercased()).font(.caption).bold().opacity(0.5).frame(maxWidth: .infinity, maxHeight: 8, alignment: .leading)
+                        Text(project.projectName).frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    ForEach(project.technologies, id: \.self) { item in
+                        Text(item.uppercased())
+                            .font(.caption)
+                            .fontWeight(.black)
+                            .padding(8)
+                            .background(colors[item].opacity(0.7))
+                            .clipShape(Capsule())
+                            
+                    }
+
+                }.padding(.top, 8)
             }
             .padding()
             .padding(.bottom)
