@@ -23,7 +23,7 @@ struct ProjectsDetailView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
-                    GeometryReader{proxy in
+                    GeometryReader { proxy in
                         
                         TopBarView(project: project, maxHeight: maxHeight, offset: $offset)
                             .foregroundColor(.white)
@@ -76,22 +76,11 @@ struct ProjectsDetailView: View {
                         Text("Sobre o projeto").font(.title2).bold()
                             .padding(.top, 12)
                         
-                        Text("\(getFirstParagraph(val: project.description)).")
-                            .font(.title3).fontWeight(.regular)
-                            .lineSpacing(6)
-                            .foregroundColor(.primary.opacity(0.7))
+                        BodyText(text: "\(getFirstParagraph(val: project.description)).")
                         
-                        Image(project.secondImage)
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(4)
-                            .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: 20)
-                            .padding(.vertical)
+                        ScalingImage(img: project.secondImage)
                         
-                        Text(getRemainingParagraph(val: project.description))
-                            .font(.title3).fontWeight(.regular)
-                            .lineSpacing(6)
-                            .foregroundColor(.primary.opacity(0.7))
+                        BodyText(text: getRemainingParagraph(val: project.description))
                             
                     }
                     .padding(.horizontal)
@@ -140,12 +129,51 @@ struct ProjectsDetailView: View {
 
         if let range = val.range(of: ". ") {
             let remaingText = val[range.upperBound...]
-            print(remaingText)
             return String(remaingText)
         }
         return ""
     }
     
+}
+
+
+struct ScalingImage: View {
+    
+    var img: String
+    @State var currentScale: CGFloat = 0
+    
+    var body: some View {
+
+        Image(img)
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(4)
+            .shadow(color: .black.opacity(0.1), radius: 20, x: 0, y: 20)
+            .padding(.vertical)
+            .scaleEffect(1 + currentScale)
+            .gesture(
+                MagnificationGesture()
+                    .onChanged { value in
+                        currentScale = value - 1
+                    }
+                    .onEnded { scale in
+                        withAnimation(.spring()) {
+                            currentScale = 0
+                        }
+                    })
+    }
+}
+
+struct BodyText: View {
+    
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.title3).fontWeight(.regular)
+            .lineSpacing(6)
+            .foregroundColor(.primary.opacity(0.7))
+    }
 }
 
 

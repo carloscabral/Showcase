@@ -19,7 +19,7 @@ struct TeamView: View {
     
     var body: some View {
         
-        NavigationView{
+        NavigationView {
             
             ScrollView {
                 
@@ -63,7 +63,7 @@ struct TeamView: View {
             }
             .animation(.easeInOut, value: columns)
             
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -94,6 +94,7 @@ struct ModalView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var team: Team
+    let socialIcons: [String: String] = ["linkedin": "69066-linkedin-subtle", "twitter": "69061-twitter-subtle", "instagram": "69057-instagram"]
     
     var body: some View {
         
@@ -107,16 +108,16 @@ struct ModalView: View {
             
             }
             .frame(maxWidth: .infinity, maxHeight: 16, alignment: .center)
-            
+                
             Circle()
                 .stroke(Color.primary.opacity(0), lineWidth: 1)
                 .background(
                     Image(team.imageURL)
                         .resizable()
                         .scaledToFill()
-                        
+
                 ).clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                .frame(width: 60, height: 60)
+                .frame(width: 66, height: 66)
             
             Text(getFirstName(val: team.name))
                 .font(.largeTitle).bold()
@@ -141,14 +142,15 @@ struct ModalView: View {
                 
                 TextBlockView(label: "Descrição", content: team.description)
                 
-                HStack(spacing: 16) {
+                HStack(spacing: 4) {
                     ForEach(team.socialNetworks) { social in
+                        
                         Link(destination: URL(string: social.URL)!) {
-                            Image(systemName: "link.circle.fill")
-                                .font(.largeTitle)
+                            LottieView(fileName: socialIcons[social.name]!)
+                                .frame(width: 60, height: 60)
                         }
                     }
-                }
+                }.offset(x: -6)
                 
             }.padding(.top, 16)
             

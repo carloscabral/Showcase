@@ -64,7 +64,7 @@ struct TeamCollection {
         Team(
             imageURL: "fabio",
             name: "Fábio Dametto",
-            description: "Administrador formado pela UERJ com MBA Executivo no COPPEAD, tem sólida experiência comercial na área de canais de vendas diretos e indiretos, tendo atuado também na área de desenvolvimento de diversos outros canais (carteiras, metas, remuneração variável, etc.). O trabalho do Fábio é totalmente focado em resultados e pessoas.",
+            description: "Administrador formado pela UERJ com MBA Executivo no COPPEAD, tem sólida experiência comercial na área de canais de vendas diretos e indiretos, tendo atuado também na área de desenvolvimento de diversos outros canais (carteiras, metas, remuneração variável, etc.). Seu é totalmente focado em resultados e pessoas.",
             jobTitle: "Sales Director",
             jobCategory: "Comercial",
             socialNetworks: [SocialNetwork(name: "linkedin", URL: "https://www.linkedin.com/in/dametto-empreendedor-comercial-inovacao/"), SocialNetwork(name: "instagram", URL: "https://www.instagram.com/dametto_fabio/")]

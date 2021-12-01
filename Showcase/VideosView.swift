@@ -19,6 +19,7 @@ struct VideosView: View {
         
         NavigationView {
             List {
+                    
                 ForEach(results) {item in
                     VideoCardView(item: item)
                         .swipeActions {
@@ -31,6 +32,7 @@ struct VideosView: View {
                         }
                 }
                 .listRowSeparator(.hidden)
+
             }
             .listStyle(.plain)
             .searchable(text: $searchingFor)
@@ -50,7 +52,7 @@ struct VideosView: View {
                         }
                 }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
     

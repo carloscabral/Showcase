@@ -54,6 +54,7 @@ struct ProjectsView: View {
             }
             
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .preferredColorScheme(
             isDarkMode ? .dark : .light
         )
