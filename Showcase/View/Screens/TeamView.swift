@@ -185,7 +185,7 @@ struct TextBlockView: View {
 }
 
 
-// PREVIEW
+// MARK: - PREVIEW
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
         TeamView().previewDevice("iPhone 11")

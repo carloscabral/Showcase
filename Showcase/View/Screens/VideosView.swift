@@ -99,7 +99,7 @@ struct VideoCardView: View {
     }
 }
 
-// PREVIEW
+// MARK: - PREVIEW
 struct VideosView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

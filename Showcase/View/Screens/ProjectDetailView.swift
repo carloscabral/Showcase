@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProjectsDetailView: View {
+struct ProjectDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -55,7 +55,7 @@ struct ProjectsDetailView: View {
                                     } label: {
                                         Text("Voltar")
                                             .frame(width: 80, height: 36)
-                                            .background(Color(.black).opacity(0.5))
+                                            .background(.ultraThinMaterial)
                                             .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
                                             .offset(x: 8)
                                     }
@@ -168,8 +168,13 @@ struct BodyText: View {
     
     var text: String
     
+    var markdown: AttributedString {
+        (try? AttributedString(markdown: text, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))) ?? AttributedString()
+    }
+    
+    
     var body: some View {
-        Text(text)
+        Text(markdown)
             .font(.title3).fontWeight(.regular)
             .lineSpacing(6)
             .foregroundColor(.primary.opacity(0.7))
@@ -277,9 +282,9 @@ func increaseOpacity(offset: CGFloat, maxHeight: CGFloat) -> CGFloat {
 
 
 
-// PREVIEW
+// MARK: - PREVIEW
 struct ProjectsDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsDetailView(project: Projects.startupProjects.first!)
+        ProjectDetailView(project: Projects.startupProjects.first!)
     }
 }

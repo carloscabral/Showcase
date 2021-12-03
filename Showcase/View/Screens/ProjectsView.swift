@@ -79,7 +79,7 @@ struct CardScrollList: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(selectedCategory) { project in
-                    NavigationLink(destination: ProjectsDetailView(project: project)) {
+                    NavigationLink(destination: ProjectDetailView(project: project)) {
                         CardView(project: project)
                     }
                 }
@@ -136,7 +136,7 @@ struct CardView: View {
 }
 
 
-// PREVIEW
+// MARK: - PREVIEW
 struct ProjectsView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
