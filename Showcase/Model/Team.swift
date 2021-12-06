@@ -91,7 +91,7 @@ struct TeamCollection {
         Team(
             imageURL: "guilherme",
             name: "Guilherme Chagas",
-            description: "Com vasto conhecimento sobre programação Server-side com PHP, é apaixonado por tecnologia e desenvolvimento desde 2012. Tem como objetivo ajudar profissionais e amigos à construir coisas fantásticas. Adora tomar cerveja e café.",
+            description: "Com vasto conhecimento sobre programação Server-side com PHP e Node, é apaixonado por tecnologia e desenvolvimento desde 2012. Tem como objetivo ajudar profissionais e amigos à construir coisas fantásticas. Adora tomar cerveja e café.",
             jobTitle: "Engenheiro de Backend",
             jobCategory: "Desenvolvimento",
             socialNetworks: []
